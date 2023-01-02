@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:travel_app/pages/navpages/home_page.dart';
+import 'package:travel_app/pages/detail_page.dart';
+import 'package:travel_app/pages/home_page.dart';
 import 'package:travel_app/pages/welcome_page.dart';
 
 import 'pages/navpages/main_page.dart';
@@ -28,7 +29,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: const MainPage(),
+      home: const DetailPage(),
     );
   }
 }
