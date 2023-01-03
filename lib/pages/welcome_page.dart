@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:travel_app/widgets/activity_count.dart';
 import 'package:travel_app/widgets/app_large_text.dart';
 import 'package:travel_app/widgets/app_text.dart';
 import 'package:travel_app/widgets/responsive_button.dart';
 
+import '../cubit/app_cubits.dart';
 import '../misc/colors.dart';
 
 class WelcomePage extends StatefulWidget {
@@ -61,8 +63,20 @@ class _WelcomePageState extends State<WelcomePage> {
                               const SizedBox(
                                 height: 40,
                               ),
-                              ResponsiveButton(
-                                width: 100,
+                              GestureDetector(
+                                onTap: () {
+                                  BlocProvider.of<AppCubits>(context).getData();
+                                },
+                                child: Container(
+                                  width: 200,
+                                  child: Row(
+                                    children: [
+                                      ResponsiveButton(
+                                        width: 100,
+                                      ),
+                                    ],
+                                  ),
+                                ),
                               )
                             ],
                           )
